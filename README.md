@@ -25,6 +25,10 @@ Yes, but you need to install docker first, see link above. if on Windows run the
 
 Go to the terminal where you ran the ```run-training....sh``` and press ```CTRL+C```, [WTF](https://medium.com/@aantipov/what-happens-when-you-ctrl-c-in-the-terminal-36b093443e06)
 
+### What the hell is this notebook stuff?
+
+Try this tutorial to learn more [tutorial](https://jupyter.org/try)
+
 ### Can I deploy this in a cloud environment via Docker? or run it on my big ML rig with many nvidia GPUs?
 
 Hell yes you can! I'll eventually write a more detailed guide here on how to do that, but the setup is almost identical to running locally.
