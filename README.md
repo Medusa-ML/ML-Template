@@ -14,3 +14,10 @@ a template project for machine learning experiments, using dockerized tensorflow
 * Run a [training notebook](./training_notebooks) to fit your model
 * Export your model to the [saved models](./saved_models) folder
 * Shrink, optimize, and deploy your model, see [deploy](./deploy) for examples 
+
+# Frequently Asked Questions
+
+### Will this run on Windows or macOS?
+
+Yes, but you need to install docker first, see link above. 
+
