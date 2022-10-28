@@ -21,3 +21,10 @@ a template project for machine learning experiments, using dockerized tensorflow
 
 Yes, but you need to install docker first, see link above. 
 
+### How to I shut down the notebook?
+
+Go to the terminal where you ran the ```run-training....sh``` and press ```CTRL+C```, [WTF](https://medium.com/@aantipov/what-happens-when-you-ctrl-c-in-the-terminal-36b093443e06)
+
+### Can I deploy this in a cloud environment via Docker? or run it on my big ML rig with many nvidia GPUs?
+
+Hell yes you can! I'll eventually write a more detailed guide here on how to do that, but the setup is almost identical to running locally.
