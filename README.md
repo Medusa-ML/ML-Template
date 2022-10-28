@@ -2,6 +2,11 @@
 
 a template project for machine learning experiments, using dockerized tensorflow environments and data downloaders
 
+# Requirements
+
+* [docker](https://www.docker.com/)
+* a bash shell
+
 # Getting Started
 
 * start your training environment by running ```sh run-training-environment.sh``` or ```sh run-training-environment-w-gpu.sh``` and follow the link to the jupyter server
