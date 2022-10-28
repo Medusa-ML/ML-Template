@@ -9,7 +9,7 @@ a template project for machine learning experiments, using dockerized tensorflow
 
 # Getting Started
 
-* start your training environment by running ```sh run-training-environment.sh``` or ```sh run-training-environment-w-gpu.sh``` and follow the link to the jupyter server
+* start your training environment by running ```sh run-training-environment.sh``` or ```sh gpu-environment.sh``` and follow the link to the jupyter server
 * Use a [downloader](./downloader/) to download a dataset into the [data](./data/) folder
 * Run a [training notebook](./training_notebooks) to fit your model
 * Export your model to the [saved models](./saved_models) folder
@@ -19,7 +19,7 @@ a template project for machine learning experiments, using dockerized tensorflow
 
 ### Will this run on Windows or macOS?
 
-Yes, but you need to install docker first, see link above. 
+Yes, but you need to install docker first, see link above. if on Windows run the ```windows-training-environment.sh``` feel free to open an issue if that doesn't work. 
 
 ### How to I shut down the notebook?
 
