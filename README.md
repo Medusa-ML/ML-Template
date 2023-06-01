@@ -6,6 +6,7 @@ a template project for machine learning experiments, using dockerized pytorch en
 * [ ] Update [pytorch docker image](https://pytorch.org/docs/stable/dynamo/installation.html#docker-installation)
 * [ ] jupyter setup guide
 * [ ] add [text classifier notebook](https://pytorch.org/tutorials/beginner/text_sentiment_ngrams_tutorial.html)
+* [ ] Integrate [Joe R Playlist](https://learning.oreilly.com/playlists/024a3344-fa6d-45ec-92b3-e8495765ed1b)
 * [ ] add image classifier notebook 
 * [ ] [LoRa fine tuning example](https://github.com/tloen/alpaca-lora)
 
