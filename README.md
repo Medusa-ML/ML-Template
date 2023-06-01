@@ -1,14 +1,25 @@
 # medusa-ml-template
 
-a template project for machine learning experiments, using dockerized tensorflow environments and data downloaders
+a template project for machine learning experiments, using dockerized pytorch environments and data downloaders
+
+# TODO
+* [ ] Update [pytorch docker image](https://pytorch.org/docs/stable/dynamo/installation.html#docker-installation)
+* [ ] jupyter setup guide
+* [ ] add image classifier notebook 
+* [ ] add text classifier notebook
+
 
 # Requirements
 
 * [docker](https://www.docker.com/)
 * a bash shell
 
+# Optional Dependencies
+* for GPU users [nvidia container toolkit](https://github.com/NVIDIA/nvidia-container-toolkit)
+
 # Getting Started
 
+* Build the docker image by using ```sh build-docker-image.sh```
 * start your training environment by running ```sh run-training-environment.sh``` or ```sh gpu-environment.sh``` and follow the link to the jupyter server
 * Use a [downloader](./downloader/) to download a dataset into the [data](./data/) folder
 * Run a [training notebook](./training_notebooks) to fit your model
@@ -19,7 +30,7 @@ a template project for machine learning experiments, using dockerized tensorflow
 
 ### Will this run on Windows or macOS?
 
-Yes, but you need to install docker first, see link above. if on Windows run the ```windows-training-environment.sh``` feel free to open an issue if that doesn't work. 
+Not really, but you can try if you must.
 
 ### How to I shut down the notebook?
 
