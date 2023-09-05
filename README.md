@@ -1,4 +1,4 @@
-# medusa-ml-template
+# ML-Template
 
 a template project for machine learning experiments, using dockerized pytorch environments and data downloaders
 
