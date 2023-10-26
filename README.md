@@ -13,14 +13,21 @@
 
 ---
 
-
 # Step 1: Define the Task 🎯
+```You can’t do good work without a deep understanding of the context of
+what you’re doing. Why is your customer trying to solve this particular
+problem? What value will they derive from the solution—how will your
+model be used, and how will it fit into your customer’s business pro-
+cesses? What kind of data is available, or could be collected? What kind of
+machine learning task can be mapped to the business problem?
+```
 > This repository won't help you do this, if you need inspiration check out [Kaggle](https://www.kaggle.com/code?page=2&types=competitions)
 
 ---
 
 ## Collect a Dataset 📦
-- Essential for training and evaluating models
+- Simply download a csv from kaggle
+- OR write a sophisticated downloader, see the [downloaders folder](./downloaders) 
 ```python
 import pandas as pd
 data = pd.read_csv('dataset.csv')
@@ -34,7 +41,7 @@ data = pd.read_csv('dataset.csv')
 data.head()
 data.describe()
 ```
-
+- At the very least, or go all out and do something like [this](https://www.kaggle.com/code/aleksandradeis/nfl-injury-analysis)
 ---
 
 ## Choose a Measure of Success 📏
