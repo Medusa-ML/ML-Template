@@ -1,9 +1,9 @@
-# The Universal Machine Learning Workflow 🔄
+# The Universal ML-Template
 
 ---
 
-## [ML Workflow Overview](./the_universal_ml_workflow.pdf) 🔄
-> Adapted from Chapter 6 of "Deep Learning with Python" 
+## Adapted from "The Universal Machine Learning Workflow" 🔄
+> Chapter 6 of "Deep Learning with Python" 
 > [O'Reilly Source](https://www.oreilly.com/library/view/deep-learning-with/9781617296864/Text/06.xhtml)
 
 ---
@@ -98,29 +98,3 @@ docker run -p 5000:5000 my_ml_model
 
 ## Monitor and Maintain 🛠️
 - Track model performance, update as necessary
-
----
-
-## [The Regression Theory of Everything](./AI_harmony_c3.pdf) 🎭
-> Insights from Chapter 3 of "AI Harmony"
-
----
-
-## Deep Learning Models 👓
-- Large data-driven functions
-
----
-
-## Key Features 🗝️
-- Complex, unpredictable, sensitive to inputs
-- Challenges in explanation and testing
-
----
-
-## Data Scientists' Time ⏳
-- Data collection, organization
-- Limited experimentation, celebrate successes, highlight failures
-
----
- 
-# END
