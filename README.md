@@ -8,7 +8,14 @@
 
 ---
 
+# How to install? FAQ.
+> See [INSTALL.md](./INSTALL.md):
+
+---
+
+
 # Step 1: Define the Task 🎯
+> This repository won't help you do this, if you need inspiration check out [Kaggle](https://www.kaggle.com/code?page=2&types=competitions)
 
 ---
 
