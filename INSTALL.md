@@ -1,12 +1,6 @@
-# ML-Template
+# INSTALLATION
 
 a template project for machine learning experiments, using dockerized pytorch environments and data downloaders
-
-# TODO
-* [ ] Update [pytorch docker image](https://pytorch.org/docs/stable/dynamo/installation.html#docker-installation)
-* [ ] jupyter setup guide
-* [ ] Integrate [Joe R Playlist examples](https://learning.oreilly.com/playlists/024a3344-fa6d-45ec-92b3-e8495765ed1b)
-* [ ] [LoRa fine tuning example](https://github.com/tloen/alpaca-lora)
 
 # Requirements
 
