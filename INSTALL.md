@@ -72,7 +72,39 @@ Remember to replace `'your-api-key-here'` with your actual OpenAI API key in eac
 
 ### Will this run on Windows or macOS?
 
-Not really, but you can try if you must.
+Not really, but you can try if you must. Specifically the pytorch docker image has known issues on M1 macs, if you want a less fancy environment that you might be able to run on your mac change ```pytorch:latest``` to ```ubuntu:latest``` in the dockerfile, and add ```pip install scikitlearn``` or something like that.
+
+I asked ChatGPT to rewrite the dockerfile so it is less fancy and here's what it said, if you are on a mac you can use the text below as your dockerfile instead:
+
+```
+# Start from the latest Ubuntu image
+FROM ubuntu:latest
+
+# Set the non-interactive mode for tzdata (prevents the interactive timezone query)
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Update the system and install necessary software
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+# Upgrade pip to the latest version
+RUN pip3 install --upgrade pip
+
+# Install Jupyter Notebook, openai, scikit-learn, matplotlib and other useful stuff.
+RUN pip install jupyter openai scikit-llm scikit-learn matplotlib numpy pandas seaborn
+
+# Set up the working directory
+WORKDIR /workspace
+
+# Change the ownership and permissions of /.local and /workspace
+RUN mkdir /.local /.jupyter
+RUN chmod -R 777 /.local /.jupyter /workspace
+
+# When the container launches, start a Jupyter Notebook server
+CMD ["jupyter", "notebook", "--ip='*'", "--port=8888", "--no-browser"]
+```
 
 ### How to I shut down the notebook?
 
