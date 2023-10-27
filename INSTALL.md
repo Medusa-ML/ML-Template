@@ -96,6 +96,7 @@ RUN pip3 install --upgrade pip
 RUN pip install jupyter openai scikit-llm scikit-learn matplotlib numpy pandas seaborn
 
 # Set up the working directory
+RUN mkdir /workspace
 WORKDIR /workspace
 
 # Change the ownership and permissions of /.local and /workspace
