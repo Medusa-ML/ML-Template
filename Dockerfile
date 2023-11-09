@@ -8,7 +8,6 @@ RUN apt-get update && apt-get install -y \
 
 # Install Jupyter Notebook, openai and other useful stuff.
 RUN pip install jupyter
-RUN pip install openai
 RUN pip install scikit-llm
 
 # Set up the working directory
