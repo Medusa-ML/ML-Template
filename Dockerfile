@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Jupyter Notebook and other useful stuff.
-RUN pip install jupyter scikit-llm matplotlib
+RUN pip install jupyter torchtext scikit-llm matplotlib 
 
 # Set up the working directory
 WORKDIR /workspace
