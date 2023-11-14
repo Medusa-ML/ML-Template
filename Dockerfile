@@ -6,9 +6,8 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Jupyter Notebook, openai and other useful stuff.
-RUN pip install jupyter
-RUN pip install scikit-llm
+# Install Jupyter Notebook and other useful stuff.
+RUN pip install jupyter scikit-llm matplotlib
 
 # Set up the working directory
 WORKDIR /workspace
