@@ -1,28 +1,10 @@
 #!/bin/bash
-set -e
 
-# Create a group and user with specified UID and GID
-groupadd -g $GID usergroup
-useradd -m -s /bin/bash -u $UID -g $GID user
-
-# Update PATH globally
-export PATH="/home/user/.local/bin:${PATH}"
-
-# Run as the created user for the next commands
-export HOME=/home/user
-gosu user sh -c '
-    # Check if open-interpreter is already installed
-    if ! pip list | grep -q open-interpreter; then
-        echo "Installing open-interpreter..."
-        pip install --user open-interpreter
-    fi
-'
-
-echo "type:"
-echo "iterpreter"
-echo "to run open-interpreter"
-echo "see https://docs.openinterpreter.com/usage/terminal/ for a usage guide"
-
-# Execute the command specified in the docker run command
-exec gosu user "$@"
-
+# Check if the setup for the custom entrypoint is enabled
+if [ "$SETUP_ENTRYPOINT" = "true" ]; then
+    chmod +x /install_interpreter.sh
+    exec /install_interpreter.sh "$@"
+else
+    # Default command or shell
+    exec "$@"
+fi
