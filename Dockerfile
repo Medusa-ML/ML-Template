@@ -1,5 +1,7 @@
 # Start from a PyTorch base image with GPU support
 FROM pytorch/pytorch:latest
+# if you want to use tensorflow change above to
+#FROM tensorflow/tensorflow:latest-jupyter
 
 # Update the system and install necessary software
 RUN apt-get update && apt-get install -y \
