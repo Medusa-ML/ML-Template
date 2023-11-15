@@ -1,0 +1,26 @@
+# Start from a PyTorch base image with GPU support
+FROM pytorch/pytorch:latest
+
+# Update the system and install necessary software
+RUN apt-get update
+RUN apt-get install -y \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Jupyter Notebook and other useful stuff.
+RUN pip install \
+	jupyter \
+	torchtext \
+	scikit-llm \
+	matplotlib 
+
+# Set up the working directory
+WORKDIR /workspace
+
+# Change the ownership and permissions of /.local and other directories
+RUN mkdir /.local /.jupyter /.config
+RUN chmod -R 777 /.local /.config /.jupyter /workspace
+
+# When the container launches, start a Jupyter Notebook server
+CMD ["jupyter", "notebook", "--ip='*'", "--port=8888", "--no-browser"]
+

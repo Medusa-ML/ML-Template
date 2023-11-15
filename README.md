@@ -13,8 +13,8 @@ This comprehensive template is designed to facilitate the development of machine
 3. **Running Examples**
     - **Access Pre-Built Examples**: Explore practical examples in the [examples](./examples/) folder to jump-start your project.
     - **Set Up the Docker Image**:
-        - Run `bash build-docker-image.sh` (only needed once).
-        - Start the training environment with `bash training-environment.sh`.
+        - Run `bash start.sh`.
+        - When asked if you want to run open-interpreter, say no. answer everything else normally.
         - Open the Jupyter Notebook link (e.g., `localhost...`) and navigate to the examples folder.
 
 ![jupyter link example](./docs/jupyter.png)
@@ -25,8 +25,7 @@ This comprehensive template is designed to facilitate the development of machine
 5. **Leveraging [Open-Interpreter](https://github.com/KillianLucas/open-interpreter/) for Model Creation**
     - We do this within a docker container for the safety of your local machine, but also to allow for a 'clean' environment to install and experiment with new dependencies.
     - **Automate Model Creation with GPT-4**:
-        - Initialize the Docker image with `bash build-docker-image.sh` (if not already done).
-        - Launch the interpreter shell using `bash open-interpreter.sh`.
+        - Initialize the Docker image with `bash start.sh` and when asked say `y` that you want to run open interpreter.
         - Input commands to the interpreter, e.g., _"create a dummy dataset of 10 statements often associated with republicans, democrats, libertarians and socialists then write me a deep neural network in pytorch using torchvision to classify those statements, write the training loop and also test the model on a new statement."_
         - Exit the interpreter by pressing `CTRL-C`.
 
