@@ -32,11 +32,11 @@ else
         fi
     elif [ "$framework" = "tensorflow" ]; then
         if [ "$open_interpreter" = "yes" ] && [ "$use_gpu" = "yes" ]; then
-            sudo docker build -f install/Dockerfile-t -t mlt-t .
-            sudo docker run --gpus all -e UID=$(id -u) -e GID=$(id -g) -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/tf -it --rm -p 8888:8888 mlt-t
+            sudo docker build -f install/Dockerfile-t -t mlt-ti .
+            sudo docker run --gpus all -e UID=$(id -u) -e GID=$(id -g) -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/tf -it --rm -p 8888:8888 mlt-ti
         elif [ "$open_interpreter" = "yes" ]; then
-            sudo docker build -f install/Dockerfile-t -t mlt-t .
-            sudo docker run -e UID=$(id -u) -e GID=$(id -g) -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/tf -it --rm -p 8888:8888 mlt-t
+            sudo docker build -f install/Dockerfile-ti -t mlt-ti .
+            sudo docker run -e UID=$(id -u) -e GID=$(id -g) -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/tf -it --rm -p 8888:8888 mlt-ti
         elif [ "$use_gpu" = "yes" ]; then
             sudo docker build -f install/Dockerfile-t -t mlt-t .
             sudo docker run --gpus all -u $(id -u):$(id -g) -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/tf -it --rm -p 8888:8888 mlt-t
