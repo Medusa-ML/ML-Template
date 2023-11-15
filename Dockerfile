@@ -3,10 +3,14 @@ FROM pytorch/pytorch:latest
 # if you want to use tensorflow change above to
 #FROM tensorflow/tensorflow:latest
 
+
 # Update the system and install necessary software
-RUN apt-get update && apt-get install -y \
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
+RUN apt-get install -y \
     python3-pip \
     gosu \
+    xdg-utils \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Jupyter Notebook and other useful stuff.

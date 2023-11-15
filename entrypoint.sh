@@ -18,6 +18,11 @@ gosu user sh -c '
     fi
 '
 
+echo "type:"
+echo "iterpreter"
+echo "to run open-interpreter"
+echo "see https://docs.openinterpreter.com/usage/terminal/ for a usage guide"
+
 # Execute the command specified in the docker run command
 exec gosu user "$@"
 
