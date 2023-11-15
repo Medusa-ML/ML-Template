@@ -4,11 +4,11 @@ This comprehensive template is designed to facilitate the development of machine
 
 ### Quick Start Guide
 1. **Setting Up Your Environment**
-    - **Install Docker**: Follow the instructions in [INSTALL.md](./INSTALL.md) to set up Docker on your machine.
+    - **Install Docker**: Follow the instructions in [INSTALL.md](./docs/INSTALL.md) to set up Docker on your machine.
     - **OpenAI API Keys (Optional)**: If you plan to integrate OpenAI's APIs, set up your API keys as described in the installation guide.
 
 2. **Understanding the Philosophy**
-    - **Template Philosophy**: Gain insights into the design and purpose of this template by reading [PHILOSOPHY.md](./PHILOSOPHY.md).
+    - **Template Philosophy**: Gain insights into the design and purpose of this template by reading [PHILOSOPHY.md](./docs/PHILOSOPHY.md).
 
 3. **Running Examples**
     - **Access Pre-Built Examples**: Explore practical examples in the [examples](./examples/) folder to jump-start your project.
@@ -17,8 +17,10 @@ This comprehensive template is designed to facilitate the development of machine
         - Start the training environment with `bash training-environment.sh`.
         - Open the Jupyter Notebook link (e.g., `localhost...`) and navigate to the examples folder.
 
+![jupyter link example](./docs/jupyter.png)
+
 4. **Building Your Own Models**
-    - **Using TensorFlow or PyTorch**: Guidelines for creating custom models using popular frameworks are available at [./notebooks/README.md](./notebooks/README.md).
+    - **Using TensorFlow or PyTorch**: Tutorials for creating custom models using popular frameworks are available at [./notebooks/README.md](./notebooks/README.md).
 
 5. **Leveraging Open-Interpreter for Model Creation**
     - **Automate Model Creation with GPT-4**:
