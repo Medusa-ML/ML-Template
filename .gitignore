@@ -1,6 +1,9 @@
 # Data Folders
 data/
 
+#other bs
+.Trash-1000
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
