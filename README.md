@@ -22,7 +22,9 @@ This comprehensive template is designed to facilitate the development of machine
 4. **Building Your Own Models**
     - **Using TensorFlow or PyTorch**: Tutorials for creating custom models using popular frameworks are available at [./notebooks/README.md](./notebooks/README.md).
 
-5. **Leveraging Open-Interpreter for Model Creation**
+5. **Leveraging [Open-Interpreter](https://github.com/KillianLucas/open-interpreter/) for Model Creation**
+
+We do this within a docker container for the safety of your local machine, but also to allow for a 'clean' environment to install and experiment with new dependencies.
     - **Automate Model Creation with GPT-4**:
         - Initialize the Docker image with `bash build-docker-image.sh` (if not already done).
         - Launch the interpreter shell using `bash open-interpreter.sh`.
