@@ -18,7 +18,7 @@ gosu user sh -c '
     fi
 
     # Ensure the conversations directory exists
-    mkdir -p /home/user/.config/Open Interpreter/conversations
+    mkdir -p "/home/user/.config/Open Interpreter/conversations"
 '
 
 echo -e "\033[1;93m==========================================\033[0m"
