@@ -74,7 +74,7 @@ By adhering to these best practices, you can create a more robust, secure, and e
 
 ## How to I shut down the notebook?
 
-* Go to the terminal where you ran the ```start.sh``` script and press ```CTRL+C```, [Why does it work that way?](https://medium.com/@aantipov/what-happens-when-you-ctrl-c-in-the-terminal-36b093443e06)
+* Go to the terminal where you ran the ```start.sh``` script and press ```CTRL+C```, [Why does it work that way?](https://askubuntu.com/questions/520454/why-do-we-use-ctrl-c-ctrl-x-ctrl-z-in-terminal)
 
 ## What the hell is this notebook stuff?
 
