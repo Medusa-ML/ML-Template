@@ -13,6 +13,10 @@ RUN apt-get install -y \
     inotify-tools \
     && rm -rf /var/lib/apt/lists/*
 
+# Add Neovim configuration settings
+RUN mkdir -p ~/.config/nvim && \
+    echo -e 'set expandtab\nset tabstop=4\nset shiftwidth=4' >> ~/.config/nvim/init.vim
+
 # Install Jupyter Notebook and other useful stuff.
 # TODO add your additional python dependencies here
 RUN pip install \

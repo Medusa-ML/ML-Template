@@ -19,8 +19,12 @@ gosu user sh -c '
 
     # Ensure the conversations directory exists
     mkdir -p "/home/user/.config/Open Interpreter/conversations"
+
+    #load the chat history, if there is any
+    find "/workspace/chats" -type f -name "*.json" -exec cp {} "/home/user/.config/Open Interpreter/conversations" \;
 '
 
+# Introduction:
 echo -e "\033[1;93m==========================================\033[0m"
 echo -e "\033[1;93m= \033[1;96mWelcome to Open Interpreter\033[0m \033[1;93m=\033[0m"
 echo -e "\033[1;93m==========================================\033[0m"
@@ -30,10 +34,11 @@ echo -e "See \033[4;34mhttps://docs.openinterpreter.com/usage/terminal/\033[0m"
 echo -e "for a \033[1;35musage guide\033[0m."
 echo -e "\033[1;93m==========================================\033[0m"
 
+# Note:
+echo -e "\n\033[1;32mNote:\033[0m Your chat history can be found in the \033[1;36m/chats\033[0m folder of your project."
 
 # Background file copy script
 LOG_DIR="/home/user/.config/Open Interpreter/conversations"; DEST_DIR="/workspace/chats"; inotifywait -m -e close_write --format '%w%f' "${LOG_DIR}" | while read file; do cp "${file}" "${DEST_DIR}"; done &
-
 
 # Execute the command specified in the docker run command
 exec gosu user "$@"
