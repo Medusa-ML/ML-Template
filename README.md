@@ -33,7 +33,7 @@ This comprehensive template is designed to facilitate the development of machine
     - We do this within a docker container for the safety of your local machine, but also to allow for a 'clean' environment to install and experiment with new dependencies.
     - **Automate Model Creation with GPT-4**:
         - Initialize the Docker image with `bash start.sh` and when asked say `y` that you want to run open interpreter.
-        - Input commands to the interpreter, e.g., _"create a dummy dataset of 10 statements often associated with republicans, democrats, libertarians and socialists then write me a deep neural network in pytorch using torchvision to classify those statements, write the training loop and also test the model on a new statement."_
+        - Input commands to the interpreter, e.g., _"create a dummy dataset of 10 statements often associated with republicans, democrats, libertarians and socialists then write me a deep neural network in pytorch using torchtext to classify those statements, write the training loop and also test the model on a new statement."_
         - Exit the interpreter by pressing `CTRL-C`.
         - Chat history is stored in the [./chats](./chats) folder
 
