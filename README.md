@@ -3,6 +3,13 @@
 This comprehensive template is designed to facilitate the development of machine learning projects using a variety of tools and frameworks. Whether you're a beginner or an experienced ML practitioner, this template provides a structured and efficient approach to building and deploying ML models.
 
 ### Quick Start Guide
+
+0. **Use this template to create your own repository**
+    - then git clone your repository, follow this guide [create a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
+    - you can watch this video for a quick guide on how to do it [youtube guide](https://www.youtube.com/watch?v=Mby9F-BP6I0)
+
+![repo](./docs/new_repo.png)
+
 1. **Setting Up Your Environment**
     - **Install Docker**:  Follow the instructions at [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) to set up Docker on your machine.
     - **OpenAI API Keys (Optional)**: If you plan to integrate OpenAI's APIs (via [open-interpreter](https://github.com/KillianLucas/open-interpreter) or [scikit-llm](https://github.com/iryna-kondr/scikit-llm)), set up your API keys as described in the [installation guide](./docs/INSTALL.md).
