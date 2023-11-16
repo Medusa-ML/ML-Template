@@ -27,7 +27,7 @@ machine learning task can be mapped to the business problem?
 
 ## Collect a Dataset 📦
 - Simply download a csv from kaggle
-- OR write a sophisticated downloader, see the [downloaders folder](./downloaders) 
+- OR write a sophisticated downloader, see the [downloaders folder](../downloaders) 
 ```python
 import pandas as pd
 data = pd.read_csv('dataset.csv')
