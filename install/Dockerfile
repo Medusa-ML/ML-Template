@@ -18,6 +18,7 @@ RUN pip install \
 	jupyter \
 	pandas \
 	numpy \
+	python-docx \
 	matplotlib \
 	seaborn \
 	scikit-learn \

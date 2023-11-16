@@ -4,8 +4,8 @@ This comprehensive template is designed to facilitate the development of machine
 
 ### Quick Start Guide
 1. **Setting Up Your Environment**
-    - **Install Docker**: Follow the instructions in [INSTALL.md](./docs/INSTALL.md) to set up Docker on your machine.
-    - **OpenAI API Keys (Optional)**: If you plan to integrate OpenAI's APIs, set up your API keys as described in the installation guide.
+    - **Install Docker**:  Follow the instructions at [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/) to set up Docker on your machine.
+    - **OpenAI API Keys (Optional)**: If you plan to integrate OpenAI's APIs (via [open-interpreter](https://github.com/KillianLucas/open-interpreter) or [scikit-llm](https://github.com/iryna-kondr/scikit-llm)), set up your API keys as described in the [installation guide](./docs/INSTALL.md).
 
 2. **Understanding the Philosophy**
     - **Template Philosophy**: Gain insights into the design and purpose of this template by reading [PHILOSOPHY.md](./docs/PHILOSOPHY.md).
@@ -62,3 +62,14 @@ When deploying models to a production environment, consider these best practices
 8. **Scalability Considerations**: Design your deployment with scalability in mind. This ensures that your application can handle increased load without degradation in performance.
 
 By adhering to these best practices, you can create a more robust, secure, and efficient production environment for your machine learning models.
+
+# FAQ
+
+## How to I shut down the notebook?
+
+* Go to the terminal where you ran the ```run-training....sh``` and press ```CTRL+C```, [WTF](https://medium.com/@aantipov/what-happens-when-you-ctrl-c-in-the-terminal-36b093443e06)
+
+## What the hell is this notebook stuff?
+
+* Try this tutorial to learn more [tutorial](https://jupyter.org/try)
+

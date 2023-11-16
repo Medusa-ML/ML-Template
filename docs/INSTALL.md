@@ -4,14 +4,14 @@ a template project for machine learning experiments, using dockerized pytorch en
 
 # Requirements
 
-* [docker](https://www.docker.com/)
-* a bash shell
+* [docker](https://github.com/iryna-kondr/scikit-llm)
+* a bash shell (aka terminal)
 
 # Optional Dependencies
-* OpenAI key if you are using scikit-llm
+* OpenAI key if you are using scikit-llm or open-interpreter
 * for GPU users [nvidia container toolkit](https://github.com/NVIDIA/nvidia-container-toolkit)
 
-# Setting up your openAI api key
+# Setting up your OpenAI api key
 
 * get your API key from openai.com [see video](https://www.youtube.com/watch?v=lnQsO-2MwXM)
 
@@ -55,23 +55,4 @@ Setting up an environment variable for your OpenAI API key across different oper
    - Running the command `source ~/.zshenv` or `source ~/.bash_profile`.
 
 Remember to replace `'your-api-key-here'` with your actual OpenAI API key in each of the steps above.
-
-
-# Getting Started
-
-* Build and run the docker image by using ```bash start.sh```
-* Use a [downloader](./downloader/) to download a dataset into the [data](./data/) folder
-* Run a [training notebook](./training_notebooks) to fit your model
-* Export your model to the [saved models](./saved_models) folder
-* Shrink, optimize, and deploy your model, see [deploy](./deploy) for examples 
-
-# Frequently Asked Questions
-
-### How to I shut down the notebook?
-
-Go to the terminal where you ran the ```run-training....sh``` and press ```CTRL+C```, [WTF](https://medium.com/@aantipov/what-happens-when-you-ctrl-c-in-the-terminal-36b093443e06)
-
-### What the hell is this notebook stuff?
-
-Try this tutorial to learn more [tutorial](https://jupyter.org/try)
 
