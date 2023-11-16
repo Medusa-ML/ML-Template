@@ -34,5 +34,31 @@ This comprehensive template is designed to facilitate the development of machine
 - **Modular Design**: The template's modular structure allows for easy customization and expansion to fit specific project needs.
 - **Community Support**: Engage with the community for troubleshooting, tips, and sharing best practices. Join us at [https://discord.gg/medusaml](https://discord.gg/medusaml)
 
-### TODO
-fix torchtext and test with tensorflow.
+## Production Deployment Warning and Best Practices
+
+### ⚠️ Warning: Not Intended for Production Use ⚠️
+This repository is primarily designed for fitting models and exporting them, rather than for running them in a production environment. Please note the following important points:
+
+- **Non-Versioned Dependencies**: The dependencies used in this repository are not versioned. Many dependencies rely on nightly or "latest" builds.
+- **Stability Not Guaranteed**: Stability and long-term support are not the primary goals of this repository. It's optimized for experimentation and model fitting rather than production stability.
+
+### 🚀 Best Practices for Deploying Models to Production
+When deploying models to a production environment, consider these best practices to ensure efficiency, stability, and security:
+
+1. **Create a Slim Dockerfile**: Design a Dockerfile specifically for production. Ensure it only includes the necessary components, keeping it as lightweight as possible.
+
+2. **Freeze Dependency Versions**: Always specify the exact versions of your dependencies. This practice reduces the risk of unexpected behavior caused by updates in dependencies.
+
+3. **Avoid Unnecessary Dependencies**: Only install the dependencies that are absolutely necessary for your application to run. This minimizes the potential attack surface for security vulnerabilities and reduces the overall size of your deployment.
+
+4. **Regularly Update and Maintain**: Keep your dependencies and your application updated with the latest security patches. Regular maintenance is crucial for the longevity and security of your production environment.
+
+5. **Performance Optimization**: Tailor your environment for optimal performance. This includes selecting the right hardware specifications and tuning your model and application settings for the best performance.
+
+6. **Security Best Practices**: Follow standard security best practices, including using secure communication protocols, implementing proper authentication and authorization mechanisms, and regular security audits.
+
+7. **Monitoring and Logging**: Implement comprehensive monitoring and logging to quickly identify and respond to issues in the production environment.
+
+8. **Scalability Considerations**: Design your deployment with scalability in mind. This ensures that your application can handle increased load without degradation in performance.
+
+By adhering to these best practices, you can create a more robust, secure, and efficient production environment for your machine learning models.

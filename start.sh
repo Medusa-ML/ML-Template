@@ -30,6 +30,10 @@ echo "Do you have nvidia-docker installed and want to run on a GPU? (Y)es/(N)o"
 read use_gpu
 use_gpu=$(echo $use_gpu | tr '[:upper:]' '[:lower:]')
 
+echo "Do you want to rebuild from scratch? (--no-cache)? (Y)es/(N)o"
+read no_cache 
+no_cache=$(echo $no_cache | tr '[:upper:]' '[:lower:]')
+
 case $framework in
     p|pytorch)
         framework="pytorch"
@@ -72,46 +76,59 @@ case $use_gpu in
         ;;
 esac
 
+case $no_cache in
+    y|yes)
+        no_cache="--no-cache"
+        ;;
+    n|no)
+        no_cache=""
+        ;;
+    *)
+        echo "Invalid input for cache clearing, Defaulting tousing cache."
+        no_cache=""
+        ;;
+esac
+
 if [ "$framework" = "pytorch" ]; then
 if [ "$open_interpreter" = "yes" ] && [ "$use_gpu" = "yes" ]; then
-    sudo docker build -f install/Dockerfile --build-arg SETUP_ENTRYPOINT=true -t mlt .
+    sudo docker build -f install/Dockerfile --build-arg OPTIONAL_INSTALLS=true --build-arg SETUP_ENTRYPOINT=true -t mlt . $no_cache
     sudo docker run --gpus all -e UID=$(id -u) -e GID=$(id -g) -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/workspace -it --rm -p 8888:8888 mlt
 elif [ "$open_interpreter" = "yes" ]; then
-    sudo docker build -f install/Dockerfile --build-arg SETUP_ENTRYPOINT=true -t mlt .
+    sudo docker build -f install/Dockerfile --build-arg OPTIONAL_INSTALLS=true --build-arg SETUP_ENTRYPOINT=true -t mlt . $no_cache
     sudo docker run -e UID=$(id -u) -e GID=$(id -g) -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/workspace -it --rm -p 8888:8888 mlt bash
 elif [ "$use_gpu" = "yes" ]; then
-    sudo docker build -f install/Dockerfile -t mlt .
+    sudo docker build -f install/Dockerfile --build-arg OPTIONAL_INSTALLS=true -t mlt . $no_cache
     sudo docker run --gpus all -u $(id -u):$(id -g) -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/workspace -it --rm -p 8888:8888 mlt
 else
-    sudo docker build -f install/Dockerfile -t mlt .
+    sudo docker build -f install/Dockerfile --build-arg OPTIONAL_INSTALLS=true -t mlt . $no_cache
     sudo docker run -u $(id -u):$(id -g) -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/workspace -it --rm -p 8888:8888 mlt
 fi
 elif [ "$framework" = "tensorflow" ]; then
 if [ "$open_interpreter" = "yes" ] && [ "$use_gpu" = "yes" ]; then
-    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=tensorflow/tensorflow:latest-jupyter --build-arg SETUP_ENTRYPOINT=true  -t mlt .
+    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=tensorflow/tensorflow:latest-jupyter --build-arg SETUP_ENTRYPOINT=true  -t mlt . $no_cache
     sudo docker run --gpus all -e UID=$(id -u) -e GID=$(id -g) -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/tf -it --rm -p 8888:8888 mlt bash
 elif [ "$open_interpreter" = "yes" ]; then
-    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=tensorflow/tensorflow:latest-jupyter --build-arg SETUP_ENTRYPOINT=true -t mlt .
+    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=tensorflow/tensorflow:latest-jupyter --build-arg SETUP_ENTRYPOINT=true -t mlt . $no_cache
     sudo docker run -e UID=$(id -u) -e GID=$(id -g) -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/tf -it --rm -p 8888:8888 mlt bash
 elif [ "$use_gpu" = "yes" ]; then
-    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=tensorflow/tensorflow:latest-jupyter -t mlt .
+    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=tensorflow/tensorflow:latest-jupyter -t mlt . $no_cache
     sudo docker run --gpus all -u $(id -u):$(id -g) -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/tf -it --rm -p 8888:8888 mlt
 else
-    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=tensorflow/tensorflow:latest-jupyter -t mlt .
+    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=tensorflow/tensorflow:latest-jupyter -t mlt . $no_cache
     sudo docker run -u $(id -u):$(id -g) -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/tf -it --rm -p 8888:8888 mlt
 fi
 elif [ "$framework" = "ubuntu" ]; then
 if [ "$open_interpreter" = "yes" ] && [ "$use_gpu" = "yes" ]; then
-    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=ubuntu:latest --build-arg SETUP_ENTRYPOINT=true -t mlt .
+    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=ubuntu:latest --build-arg SETUP_ENTRYPOINT=true -t mlt . $no_cache
     sudo docker run --gpus all -e UID=$(id -u) -e GID=$(id -g) -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/tf -it --rm -p 8888:8888 mlt bash
 elif [ "$open_interpreter" = "yes" ]; then
-    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=ubuntu:latest --build-arg SETUP_ENTRYPOINT=true -t mlt .
+    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=ubuntu:latest --build-arg SETUP_ENTRYPOINT=true -t mlt . $no_cache
     sudo docker run -e UID=$(id -u) -e GID=$(id -g) -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/tf -it --rm -p 8888:8888 mlt bash
 elif [ "$use_gpu" = "yes" ]; then
-    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=ubuntu:latest -t mlt .
+    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=ubuntu:latest -t mlt . $no_cache
     sudo docker run --gpus all -u $(id -u):$(id -g) -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/tf -it --rm -p 8888:8888 mlt
 else
-    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=ubuntu:latest -t mlt .
+    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=ubuntu:latest -t mlt . $no_cache
     sudo docker run -u $(id -u):$(id -g) -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/tf -it --rm -p 8888:8888 mlt
 fi
 fi

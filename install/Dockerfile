@@ -32,6 +32,13 @@ RUN pip install \
 	huggingface_hub \
 	accelerate 
 
+# optional installs that cause problems go here (like torchtext) 
+ARG OPTIONAL_INSTALLS=false
+ENV OPTIONAL_INSTALLS=${OPTIONAL_INSTALLS}
+COPY install/optional_deps.sh /optional_deps.sh
+RUN chmod +x /optional_deps.sh
+RUN /optional_deps.sh 
+
 # Set up the working directory
 WORKDIR /workspace
 
