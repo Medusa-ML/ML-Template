@@ -16,6 +16,9 @@ gosu user sh -c '
         echo "Installing open-interpreter..."
         pip install --user open-interpreter
     fi
+
+    # Ensure the conversations directory exists
+    mkdir -p /home/user/.config/Open Interpreter/conversations
 '
 
 echo -e "\033[1;93m==========================================\033[0m"
@@ -26,6 +29,11 @@ echo -e "To run \033[1;32mopen-interpreter\033[0m,"
 echo -e "See \033[4;34mhttps://docs.openinterpreter.com/usage/terminal/\033[0m"
 echo -e "for a \033[1;35musage guide\033[0m."
 echo -e "\033[1;93m==========================================\033[0m"
+
+
+# Background file copy script
+LOG_DIR="/home/user/.config/Open Interpreter/conversations"; DEST_DIR="/workspace/chats"; inotifywait -m -e close_write --format '%w%f' "${LOG_DIR}" | while read file; do cp "${file}" "${DEST_DIR}"; done &
+
 
 # Execute the command specified in the docker run command
 exec gosu user "$@"

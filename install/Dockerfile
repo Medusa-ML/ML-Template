@@ -10,6 +10,7 @@ RUN apt-get install -y \
     neovim \
     gosu \
     xdg-utils \
+    inotify-tools \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Jupyter Notebook and other useful stuff.
