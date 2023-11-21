@@ -16,7 +16,7 @@ echo "The Medusa Project is committed to delivering state-of-the-art technology"
 echo "solutions for your machine learning projects, ensuring a seamless and"
 echo "productive user experience."
 echo ""
-echo "For community support join our discord at https://discord.gg/medusaml"
+echo "For community support join our discord at https://discord.gg/bEPkfhbwE4"
 echo "================================================================================"
 echo ""
 
