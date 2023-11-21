@@ -40,7 +40,7 @@ This comprehensive template is designed to facilitate the development of machine
 ### Additional Features
 - **Comprehensive Documentation**: Each step of the process is well-documented to ensure a smooth user experience.
 - **Modular Design**: The template's modular structure allows for easy customization and expansion to fit specific project needs.
-- **Community Support**: Engage with the community for troubleshooting, tips, and sharing best practices. Join us at [https://discord.gg/medusaml](https://discord.gg/medusaml)
+- **Community Support**: Engage with the community for troubleshooting, tips, and sharing best practices. Join us at [https://discord.gg/bEPkfhbwE4](https://discord.gg/bEPkfhbwE4)
 
 ## Production Deployment Warning and Best Practices
 
