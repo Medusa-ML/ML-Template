@@ -45,12 +45,27 @@ tag=""
 
 case $framework in
     p|pytorch)
-        framework="pytorch/pytorch:latest"
-	optional_installs="--build-arg OPTIONAL_INSTALLS=true"
-	tag+="-pytorch"
+        case $use_gpu in
+            y|yes)
+                # TODO test that this works with gpu support
+                framework="pytorch/pytorch:latest"
+                ;;
+            n|no)
+                framework="pytorch/pytorch:latest"
+                ;;
+        esac
+	    optional_installs="--build-arg OPTIONAL_INSTALLS=true"
+	    tag+="-pytorch"
         ;;
     t|tensorflow)
-        framework="tensorflow/tensorflow:latest-jupyter"
+        case $use_gpu in
+            y|yes)
+                framework="tensorflow/tensorflow:latest-gpu-jupyter"
+                ;;
+            n|no)
+                framework="tensorflow/tensorflow:latest-jupyter"
+                ;;
+        esac
 	tag+="-tensorflow"
         ;;
     u|ubuntu)
