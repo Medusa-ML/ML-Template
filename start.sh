@@ -53,6 +53,9 @@ case $framework in
             n|no)
                 framework="pytorch/pytorch:latest"
                 ;;
+            *)
+                framework="pytorch/pytorch:latest"
+                ;;
         esac
 	    optional_installs="--build-arg OPTIONAL_INSTALLS=true"
 	    tag+="-pytorch"
@@ -65,12 +68,15 @@ case $framework in
             n|no)
                 framework="tensorflow/tensorflow:latest-jupyter"
                 ;;
+            *)
+                framework="tensorflow/tensorflow:latest-jupyter"
+                ;;
         esac
-	tag+="-tensorflow"
+	    tag+="-tensorflow"
         ;;
     u|ubuntu)
         framework="ubuntu:latest"
-	tag+="-ubuntu"
+	    tag+="-ubuntu"
         ;;
     *)
         framework="ubuntu:latest"
@@ -139,8 +145,10 @@ esac
 
 
 if [ "$skip_build" = "no" ]; then
-	sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=$framework $optional_installs $open_interpreter -t mlt$tag . $no_cache
+	echo "Building with base image: $framework"
+    sudo docker build -f install/Dockerfile --build-arg BASE_IMAGE=$framework $optional_installs $open_interpreter -t mlt$tag . $no_cache
 fi
 
+echo "running with tag: mlt$tag"
 sudo docker run $use_gpu $user_setup -e OPENAI_API_KEY=$OPENAI_API_KEY -v $(pwd):/workspace -it --rm -p 8888:8888 mlt$tag $bashopt
 
